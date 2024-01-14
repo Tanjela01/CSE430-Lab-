@@ -1,0 +1,61 @@
+1.Folder create
+2.type composer require phpunit/phpunit --dev in the terminal
+3. comoser.json:{    "autoload": {
+    "psr-4":{
+        "app\\": "app"
+    }
+},
+    "require-dev": {
+        "phpunit/phpunit": "^10.4"
+    }
+}
+5.then composer update
+6.phpunit.xml file:
+<?xml version ="1.0" encoding ="UTF-8"?>
+<phpunit bootstrap ="vendor/autoload.php" colors="true" stopOnFailure="false">
+   <testsuites>
+       <testsuite name="app">
+       <directory> tests</directory>
+       </testsuite>
+
+    </testsuites>
+
+</phpunit>
+7. insatall better phpunit, phpunit
+8. app folder->user.php :
+<?php
+
+namespace app ;
+class user{
+
+    public int $id;
+    public string $name;
+
+    public function _construct (int $id ,string $name){
+        $this ->id=$id;
+        $this->name=$name;
+    }
+}
+
+?>
+9.create tests folder then create userTest.PHP file.Then :
+<?php
+
+use app\user;
+use PHPUnit\Framework\TestCase;
+
+class userTest extends TestCase{
+    public function testconstruct():void{
+        $user =new user('1','tanjela');
+        $this->assertSame(1,$user->id);
+        $this->assertSame("tanjela",$user->name);
+    }
+}
+?>
+## EXEC=int value return(write)
+query=(read)
+featchall=to read all data 
+fetch assoc= associative array
+assertgreater than=
+vardum=to show data
+
